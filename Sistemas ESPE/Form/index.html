@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario">
+        <label for="name">Nombre:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="phone">Teléfono (10 dígitos):</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"><br>
+        <label for="cedula">Número de cédula (10 dígitos):</label><br>
+        <input type="text" id="cedula" name="cedula" pattern="[0-9]{10}"><br>
+        <input type="checkbox" id="updates" name="updates">
+        <label for="updates">¿Quieres recibir actualizaciones?</label><br><br>
+        <input type="submit" value="Enviar">
+      </form>
+      <script src="app.js"></script>
+</body>
+</html>

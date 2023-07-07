@@ -1,0 +1,154 @@
+.layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 60px;
+    grid-row-gap: 60px;
+    }
+
+    .tos { grid-area: 1 / 1 / 2 / 2; }
+    .ojos { grid-area: 1 / 2 / 2 / 3; }
+    .garganta { grid-area: 1 / 3 / 2 / 4; }
+    .fiebre { grid-area: 2 / 1 / 3 / 2; }
+    .malestar { grid-area: 2 / 2 / 3 / 3; }
+    .cabeza { grid-area: 2 / 3 / 3 / 4; }
+    .formulario { grid-area: 3 / 1 / 4 / 4; }
+
+  /* Estilo general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #007bff;
+    padding: 20px;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Estilo de la sección principal */
+.layout {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "tos ojos garganta"
+        "fiebre malestar cabeza";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    margin-top: 20px;
+}
+.layout img{
+    margin-top: 10px;
+    border: 2px solid #5C5F80;
+}
+.layout > div {
+    background-color: #B8BEFF;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.layout h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.layout h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.layout p {
+    margin: 0;
+}
+
+/* Estilo del formulario */
+.formulario {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.formulario h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.formulario form {
+    margin-top: 10px;
+}
+
+.formulario label {
+    font-weight: bold;
+}
+
+.formulario input[type="text"],
+.formulario input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.formulario input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos adicionales para ajustar el diseño en dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    .layout {
+        grid-template-areas:
+            "tos"
+            "ojos"
+            "garganta"
+            "fiebre"
+            "malestar"
+            "cabeza";
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .content {
+        padding: 10px;
+    }
+}
+
+

@@ -1,0 +1,34 @@
+body {
+  background-color: rgb(43, 43, 43);
+}
+#menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #515151;
+  transition: transform 0.3s ease;
+  transform: translateX(-200px);
+
+}
+
+#menu.show {
+  transform: translateX(0);
+}
+
+#toggle-button {
+  position: fixed;
+  left: 210px;
+  top: 10px;
+  z-index: 999;
+}
+#menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#menu ul li a{
+    text-decoration: none;
+    color: white;
+}

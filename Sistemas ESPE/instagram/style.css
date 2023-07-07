@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.layout {
+  width: 1366px;
+  height: 768px;
+
+  display: grid;
+  grid:
+    "pestanas contenido recomendaciones"100% / 25% 50% 25%;
+  gap: 8px;
+}
+
+.pestanas {
+  grid-area: pestanas;
+}
+
+.contenido {
+  grid-area: contenido;
+}
+
+.recomendaciones {
+  grid-area: recomendaciones;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background-color: black;
+  font-size: small;
+}
+
+.pestanas {
+  grid-area: pestanas;
+  border-right: 1px solid rgb(117, 117, 117);
+  margin-right: 50px;
+}
+
+.caja a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  margin-left: 15px;
+}
+
+
+#logo-principal {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.caja img {
+  margin-right: 10px;
+  filter: invert(99%) sepia(3%) saturate(5%) hue-rotate(151deg) brightness(115%) contrast(99%);
+  width: 30px;
+  height: 30px;
+  -webkit-filter: invert(99%) sepia(3%) saturate(5%) hue-rotate(151deg) brightness(115%) contrast(99%);
+}
+
+.perfil {
+  border-radius: 50%;
+  /* Hace que la imagen sea redondeada */
+}
+
+@media screen and (max-width: 770px) {
+  .caja h2 {
+    display: none;
+  }
+
+  .container-nav {
+    width: auto;
+  }
+
+  #logo-principal {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .caja a {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 15px;
+  }
+}
+
+
+.historias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+
+.caja-historias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.caja-historias img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid white;
+}
+
+.caja-historias p {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+.caja-historias:hover img {
+  border-color: #fe1696;
+}
+
+.caja-historias:hover p {
+  color: #fe1696;
+}
+
+.iconos {
+  filter: invert(99%) sepia(3%) saturate(5%) hue-rotate(151deg) brightness(115%) contrast(99%);
+  width: 30px;
+  height: 30px;
+  -webkit-filter: invert(99%) sepia(3%) saturate(5%) hue-rotate(151deg) brightness(115%) contrast(99%);
+}
+
+.perfil-publicacion {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.perfil-publicacion img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 3px solid white;
+}
+
+.perfil-publicacion p {
+  margin: 0;
+  font-size: 12px;
+  text-align: right;
+}
+
+.botones {
+  margin-top: 20px;
+}
+
+.iconos {
+  filter: brightness(0) invert(1);
+  /* Aplica el filtro blanco */
+}
+
+.publicacion .botones {
+  display: flex;
+  /* Muestra los iconos de publicación en una fila */
+}
+
+.publicacion .botones img {
+  margin-right: 10px;
+  /* Agrega un margen derecho entre los iconos de publicación */
+}
+
+.recomendaciones-contenido {
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.recomendaciones-perfil img {
+  width: 50px;
+  height: 50px;
+}
+
+.recomendaciones-caja img {
+  width: 50px;
+  height: 50px;
+}
+
+
+.recomendaciones-caja {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.recomendaciones-caja img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 3px solid white;
+}
+
+.recomendaciones-caja {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+
+
+.recomendaciones-caja .contenido {
+  display: flex;
+  flex-direction: column;
+}
+
+.recomendaciones-caja h2 {
+  margin: 0;
+}
+
+.recomendaciones-caja p {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.layout {
+  width: 1366px;
+  height: 100vh;
+  display: grid;
+  grid:
+    "pestanas contenido recomendaciones" 100%
+    / 25% 50% 25%;
+  gap: 8px;
+}

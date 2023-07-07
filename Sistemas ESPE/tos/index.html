@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gripe</title>
+    <script>
+        function validarCedula() {
+            var cedula = document.getElementById("cedula").value;
+            if (cedula.length !== 10) {
+                alert("La cedula debe tener exactamente 10 dígitos.");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <h1>Malestares de gripe</h1>
+        </header>
+        <section class="layout">
+            <div class="tos">
+                <h1>Tos</h1>
+                <h2>Ambroxol (Mucosolvan o genérico)</h2>
+                <p>30mg/5mL para adultos o jarabe pediátrico de 15mg/5mL</p>
+                <p>El tiempo de tratamiento debe ser indicado por el médico</p>
+                <img src="medicamentos/OIP (1).jpeg" alt="">
+            </div>
+            <div class="ojos">
+                <h1>Dolor en los ojos</h1>
+                <h2>
+                    Colirio F/10 CC Uno
+                </h2>
+                <p>
+                    3 gotas cada 12 horas por 6 días (7:00 - 19:00)
+                </p>
+                <img src="medicamentos/R.jpeg" alt="">
+            </div>
+            <div class="garganta">
+                <h1>Dolor de garganta</h1>
+                <h2>
+                    Ibuprofeno
+                </h2>
+                <p>
+                    200-400 mg por dosis
+                </p>
+                <p>
+                    3-4 veces al día
+                </p>
+                <p>
+                    No más de 10 días
+                </p>
+                <img src="medicamentos/OIP (2).jpeg" alt="">
+            </div>
+            <div class="fiebre">
+                <h1>Fiebre</h1>
+                <h2>Paracetamol</h2>
+                <p>
+                    500-1000 mg por dosis
+                </p>
+                <p>3-4 veces al día</p>
+                <p>
+                    No más de 3 días para la fiebre
+                </p>
+                <img src="medicamentos/OIP (3).jpeg" alt="">
+            </div>
+            <div class="malestar">
+                <h1>Malestar general</h1>
+                <h2>
+                    Naproxeno
+                </h2>
+                <p>
+                    250-500 mg por dosis
+                </p>
+                <p>
+                    2 veces al día
+                </p>
+                <p>
+                    No más de 10 días
+                </p>
+                <img src="medicamentos/OIP (4).jpeg" alt="">
+            </div>
+            <div class="cabeza">
+                <h1>Dolor de Cabeza</h1>
+                <h2>
+                    Aspirina (ácido acetilsalicílico)
+                </h2>
+                <p>
+                    325-650 mg por dosis
+                </p>
+                <p>
+                    Cada 4-6 horas
+                </p>
+                <p>
+                    No más de 10 días
+                </p>
+                <img src="medicamentos/OIP (5).jpeg" alt="">
+            </div>
+            <div class="formulario">
+                <h1>Datos personales</h1>
+                <form id="formulario" onsubmit="return validarCedula()">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required><br><br>
+
+                    <label for="peso">Peso (kg):</label>
+                    <input type="number" id="peso" name="peso" required><br><br>
+
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" required><br><br>
+
+                    <label for="cedula">Cedula:</label>
+                    <input type="text" id="cedula" name="cedula" maxlength="10" required><br><br>
+
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

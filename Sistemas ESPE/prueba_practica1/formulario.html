@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario">
+        <label for="paquete">¿Qué paquete desea escoger?</label>
+        <select id="paquete" name="paquete">
+            <option value="normal">Paquete normal - 15$/mes</option>
+            <option value="mejorado">Paquete mejorado - 30$/mes</option>
+            <option value="premiun">Paquete premiun - 50$/mes</option>
+        </select>
+
+        <h2>Crear dominio</h2>
+        <label for="nombre-dominio">Nombre del dominio:</label>
+        <input type="text" id="nombre-dominio" name="nombre-dominio"><br>
+
+        <label for="ip-dominio">IP:</label>
+        <input type="text" id="ip-dominio" name="ip-dominio"><br>
+        <h3>Contacto administrativo</h3>
+        <label for="nombre-admin">Nombre:</label>
+        <input type="text" id="nombre-admin" name="nombre-admin"><br>
+
+        <label for="ciudad-admin">Ciudad:</label>
+        <input type="text" id="ciudad-admin" name="ciudad-admin"><br>
+
+        <label for="pais-admin">País:</label>
+        <input type="text" id="pais-admin" name="pais-admin"><br>
+
+        <label for="telefono-admin">Teléfono:</label>
+        <input type="text" id="telefono-admin" name="telefono-admin"><br>
+
+        <label for="correo-admin">Correo:</label>
+        <input type="email" id="correo-admin" name="correo-admin"><br>
+
+        <h3>Contacto técnico</h3>
+        <label for="nombre-tecnico">Nombre:</label>
+        <input type="text" id="nombre-tecnico" name="nombre-tecnico"><br>
+
+        <label for="ciudad-tecnico">Ciudad:</label>
+        <input type="text" id="ciudad-tecnico" name="ciudad-tecnico"><br>
+
+        <label for="pais-tecnico">País:</label>
+        <input type="text" id="pais-tecnico" name="pais-tecnico"><br>
+
+        <label for="telefono-tecnico">Teléfono:</label>
+        <input type="text" id="telefono-tecnico" name="telefono-tecnico"><br>
+
+        <label for="correo-tecnico">Correo:</label>
+        <input type="email" id="correo-tecnico" name="correo-tecnico"><br>
+        <h3>Name Server</h3>
+        <label for="nserver1">Nserver1</label>
+        <input type="text" id="nserver1" name="nserver1"><br>
+
+        <label for="nserver2">Nserver2</label>
+        <input type="text" id="nserver2" name="nserver2"><br>
+       <h3>Registros</h3>
+        <label for="txt-registro">TXT:</label>
+        <input type="text" id="txt-registro" name="txt-registro"><br>
+
+        <label for="a-registro">A:</label>
+        <input type="text" id="a-registro" name="a-registro"><br>
+
+        <label for="cname-registro">CNAME:</label>
+        <input type="text" id="cname-registro" name="cname-registro"><br>
+
+        <label for="ptr-registro">PTR:</label>
+        <input type="text" id="ptr-registro" name="ptr-registro"><br>
+
+        <label for="spf-registro">SPF:</label>
+        <input type="text" id="spf-registro" name="spf-registro"><br>
+
+        <label for="mx-registro">MX:</label>
+        <input type="text" id="mx-registro" name="mx-registro"><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>
