@@ -1,18 +1,22 @@
 import numpy as np
 import random
+#imprime cada matriz para que se vea en forma de cubo abierto
 def mostrar_cubo():
     print("               ", blanco_superior[0])
     print("               ", blanco_superior[1])
     print("               ", blanco_superior[2])
-    print(amarillo_inferior[0], verde_frontal[0], rojo_lateral_derecho[0], azul_lateral_izquierdo[0])
-    print(amarillo_inferior[1], verde_frontal[1], rojo_lateral_derecho[1], azul_lateral_izquierdo[1])
-    print(amarillo_inferior[2], verde_frontal[2], rojo_lateral_derecho[2], azul_lateral_izquierdo[2])
+    print(naranja_posterior[0], verde_frontal[0], rojo_lateral_derecho[0], azul_lateral_izquierdo[0])
+    print(naranja_posterior[1], verde_frontal[1], rojo_lateral_derecho[1], azul_lateral_izquierdo[1])
+    print(naranja_posterior[2], verde_frontal[2], rojo_lateral_derecho[2], azul_lateral_izquierdo[2])
+    print("               ", amarillo_inferior[0])
+    print("               ", amarillo_inferior[1])
+    print("               ", amarillo_inferior[2])
 
 
 def rotar_antihorario(frontal, superior, lateral_derecho, inferior, lateral_izquierdo):
     # Rotar la matriz verde_frontal en sentido contrario a las manecillas del reloj
-    frontal[:] = np.rot90(frontal, k=1)
-    # Rotar las filas y columnas de las otras matrices
+    frontal[:] = np.rot90(frontal, k=1) #usa numpy para rotar la cara lateral en sentido antihorario
+    # Rotar las filas y columnas de las otras matrices, reemplazando los valores de forma que cuando se mueve una la otra tambien se mueva, se usa un temp para al final ponerlo en el ultimo movimiento
     fila_temp = superior[2].copy()
     superior[2][0] = lateral_derecho[0][0]
     superior[2][1] = lateral_derecho[1][0]
@@ -30,7 +34,7 @@ def rotar_antihorario(frontal, superior, lateral_derecho, inferior, lateral_izqu
 
 def rotar_horario(frontal, superior, lateral_derecho, inferior, lateral_izquierdo):
 
-    # Rotar la matriz verde_frontal en sentido de las manecillas del reloj
+    # Rotar la matriz verde_frontal en sentido de las manecillas del reloj usando numpy
     frontal[:] = np.rot90(frontal, k=-1)
     # Rotar las filas y columnas de las otras matrices
     fila_temp = superior[2].copy()
@@ -47,7 +51,7 @@ def rotar_horario(frontal, superior, lateral_derecho, inferior, lateral_izquierd
     lateral_derecho[1][0] = fila_temp[1]
     lateral_derecho[2][0] = fila_temp[2]
 
-
+#manda las matrices a rotar de forma que la que se quiere rotar es la frontal y las demás son sus laterales y superiores
 def frontal():
     print("Movimiento frontal")
     rotar_horario(verde_frontal, blanco_superior,
@@ -122,7 +126,7 @@ def posterior_primo():
 
 
 
-# Lista de funciones de movimiento disponibles
+# Lista de funciones de movimiento disponibles, usando diccionarios de python
 movimientos = [
     frontal, frontal_primo,
     lateral_derecho, lateral_derecho_primo,
@@ -131,24 +135,23 @@ movimientos = [
     lateral_izquierdo, lateral_izquierdo_primo,
     posterior, posterior_primo
 ]
-
+#mediante random selecciona cualquier miembro del diccionario de movimientos y lo ejecuta un numero aleatorio de veces
 def desordenar_aleatoriamente():
     print("Desordenar de manera aleatoria")
     num_movimientos = random.randint(10, 20)  # Número aleatorio de movimientos
     for _ in range(num_movimientos):
         movimiento = random.choice(movimientos)  # Seleccionar un movimiento aleatorio
         movimiento()  # Ejecutar el movimiento
-    mostrar_cubo()
 
+#mediante random selecciona cualquier miembro del diccionario de movimientos y lo ejecuta un numero de veces dadas por el usuario
 def desordenar_dada_cantidad_movimientos():
     print("Desordenar dada una cantidad de movimientos")
     num_movimientos = int(input("Ingresa la cantidad de movimientos: "))
     for _ in range(num_movimientos):
         movimiento = random.choice(movimientos)  # Seleccionar un movimiento aleatorio
         movimiento()  # Ejecutar el movimiento
-    mostrar_cubo()
 
-
+#switch para seleccionar los movimientos manualmente
 def movimientos_manuales():
     while True:
         opcion = input(
@@ -177,7 +180,7 @@ def movimientos_manuales():
             print("Opción desconocida")
 
 #=====================================================================================================================
-
+#ordenamiento del cubo por burbuja
 
 def ordenar_cubo():
     matriz_cubo = [blanco_superior, amarillo_inferior, rojo_lateral_derecho, naranja_posterior, azul_lateral_izquierdo, verde_frontal]
@@ -202,12 +205,12 @@ def ordenar_cubo():
                 index += 1
 
     # Actualizar las matrices originales del cubo con las matrices ordenadas
-    blanco_superior[:] = cubo_ordenado[0]
-    amarillo_inferior[:] = cubo_ordenado[1]
-    rojo_lateral_derecho[:] = cubo_ordenado[2]
-    naranja_posterior[:] = cubo_ordenado[5]
-    azul_lateral_izquierdo[:] = cubo_ordenado[4]
-    verde_frontal[:] = cubo_ordenado[3]
+    blanco_superior[:] = cubo_ordenado[4]
+    amarillo_inferior[:] = cubo_ordenado[5]
+    rojo_lateral_derecho[:] = cubo_ordenado[3]
+    naranja_posterior[:] = cubo_ordenado[2]
+    azul_lateral_izquierdo[:] = cubo_ordenado[0]
+    verde_frontal[:] = cubo_ordenado[1]
 
 
     mostrar_cubo()
@@ -223,7 +226,7 @@ azul_lateral_izquierdo = [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]]
 verde_frontal = [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]]
 
 
-
+#switch para seleccionar los movimientos
 mostrar_cubo()
 while True:
     opcion = input(
