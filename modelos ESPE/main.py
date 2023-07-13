@@ -5,9 +5,9 @@ def mostrar_cubo():
     print("               ", blanco_superior[0])
     print("               ", blanco_superior[1])
     print("               ", blanco_superior[2])
-    print(naranja_posterior[0], verde_frontal[0], rojo_lateral_derecho[0], azul_lateral_izquierdo[0])
-    print(naranja_posterior[1], verde_frontal[1], rojo_lateral_derecho[1], azul_lateral_izquierdo[1])
-    print(naranja_posterior[2], verde_frontal[2], rojo_lateral_derecho[2], azul_lateral_izquierdo[2])
+    print(naranja_lateral_izquierdo[0], verde_frontal[0], rojo_lateral_derecho[0], azul_posterior[0])
+    print(naranja_lateral_izquierdo[1], verde_frontal[1], rojo_lateral_derecho[1], azul_posterior[1])
+    print(naranja_lateral_izquierdo[2], verde_frontal[2], rojo_lateral_derecho[2], azul_posterior[2])
     print("               ", amarillo_inferior[0])
     print("               ", amarillo_inferior[1])
     print("               ", amarillo_inferior[2])
@@ -55,73 +55,71 @@ def rotar_horario(frontal, superior, lateral_derecho, inferior, lateral_izquierd
 def frontal():
     print("Movimiento frontal")
     rotar_horario(verde_frontal, blanco_superior,
-              rojo_lateral_derecho, amarillo_inferior, naranja_posterior)
+              rojo_lateral_derecho, amarillo_inferior, naranja_lateral_izquierdo)
     mostrar_cubo()
 
 def frontal_primo():
     print("Movimiento frontal'")
     rotar_antihorario(verde_frontal, blanco_superior,
-                  rojo_lateral_derecho, amarillo_inferior, naranja_posterior)
+                  rojo_lateral_derecho, amarillo_inferior, naranja_lateral_izquierdo)
     mostrar_cubo()
 
 def lateral_derecho():
     print("Movimiento lateral derecho")
     rotar_horario(rojo_lateral_derecho, blanco_superior,
-              azul_lateral_izquierdo, amarillo_inferior, verde_frontal)
+              azul_posterior, amarillo_inferior, verde_frontal)
     mostrar_cubo()
 
 def lateral_derecho_primo():
     print("Movimiento lateral derecho'")
     rotar_antihorario(rojo_lateral_derecho, blanco_superior,
-                  azul_lateral_izquierdo, amarillo_inferior, verde_frontal)
+                  azul_posterior, amarillo_inferior, verde_frontal)
     mostrar_cubo()
 
 def superior():
     print("Movimiento superior")
-    rotar_horario(blanco_superior, azul_lateral_izquierdo,
+    rotar_horario(blanco_superior, azul_posterior,
               rojo_lateral_derecho, verde_frontal, amarillo_inferior)
     mostrar_cubo()
 
 def superior_primo():
     print("Movimiento superior'")
-    rotar_antihorario(blanco_superior, azul_lateral_izquierdo,
+    rotar_antihorario(blanco_superior, azul_posterior,
                   rojo_lateral_derecho, verde_frontal, amarillo_inferior)
     mostrar_cubo()
 
 def inferior():
     print("Movimiento inferior")
     rotar_horario(amarillo_inferior, verde_frontal, rojo_lateral_derecho,
-              azul_lateral_izquierdo, naranja_posterior)
+              azul_posterior, naranja_lateral_izquierdo)
     mostrar_cubo()
 
 def inferior_primo():
     print("Movimiento inferior'")
     rotar_antihorario(amarillo_inferior, verde_frontal,
-                  rojo_lateral_derecho, azul_lateral_izquierdo, naranja_posterior)
+                  rojo_lateral_derecho, azul_posterior, naranja_lateral_izquierdo)
     mostrar_cubo()
 
 def lateral_izquierdo():
     print("Movimiento lateral izquierdo")
-    rotar_horario(azul_lateral_izquierdo, blanco_superior,
-              naranja_posterior, amarillo_inferior, rojo_lateral_derecho)
+    rotar_horario(azul_posterior, blanco_superior,
+              naranja_lateral_izquierdo, amarillo_inferior, rojo_lateral_derecho)
     mostrar_cubo()
 
 def lateral_izquierdo_primo():
     print("Movimiento lateral izquierdo'")
-    rotar_antihorario(azul_lateral_izquierdo, blanco_superior,
-                  naranja_posterior, amarillo_inferior, rojo_lateral_derecho)
+    rotar_antihorario(azul_posterior, blanco_superior,
+                  naranja_lateral_izquierdo, amarillo_inferior, rojo_lateral_derecho)
     mostrar_cubo()
 
 def posterior():
     print("Movimiento posterior")
-    rotar_horario(naranja_posterior, blanco_superior, verde_frontal,
-              amarillo_inferior, azul_lateral_izquierdo)
+    rotar_horario(azul_posterior,blanco_superior,rojo_lateral_derecho,amarillo_inferior,naranja_lateral_izquierdo)
     mostrar_cubo()
 
 def posterior_primo():
     print("Movimiento posterior'")
-    rotar_horario(naranja_posterior, blanco_superior, verde_frontal,
-              amarillo_inferior, azul_lateral_izquierdo)
+    rotar_horario(azul_posterior,blanco_superior,rojo_lateral_derecho,amarillo_inferior,naranja_lateral_izquierdo)
     mostrar_cubo()
 
 
@@ -183,8 +181,8 @@ def movimientos_manuales():
 #ordenamiento del cubo por burbuja
 
 def ordenar_cubo():
-    matriz_cubo = [blanco_superior, amarillo_inferior, rojo_lateral_derecho, naranja_posterior, azul_lateral_izquierdo, verde_frontal]
-    cubo_ordenado = [blanco_superior.copy(), amarillo_inferior.copy(), rojo_lateral_derecho.copy(), naranja_posterior.copy(), azul_lateral_izquierdo.copy(), verde_frontal.copy()]
+    matriz_cubo = [blanco_superior, amarillo_inferior, rojo_lateral_derecho, naranja_lateral_izquierdo, azul_posterior, verde_frontal]
+    cubo_ordenado = [blanco_superior.copy(), amarillo_inferior.copy(), rojo_lateral_derecho.copy(), naranja_lateral_izquierdo.copy(), azul_posterior.copy(), verde_frontal.copy()]
 
     # Convertir las matrices del cubo en una lista para facilitar la ordenación
     lista_cubo = [elemento for matriz in matriz_cubo for fila in matriz for elemento in fila]
@@ -208,8 +206,8 @@ def ordenar_cubo():
     blanco_superior[:] = cubo_ordenado[4]
     amarillo_inferior[:] = cubo_ordenado[5]
     rojo_lateral_derecho[:] = cubo_ordenado[3]
-    naranja_posterior[:] = cubo_ordenado[2]
-    azul_lateral_izquierdo[:] = cubo_ordenado[0]
+    naranja_lateral_izquierdo[:] = cubo_ordenado[2]
+    azul_posterior[:] = cubo_ordenado[0]
     verde_frontal[:] = cubo_ordenado[1]
 
 
@@ -221,8 +219,8 @@ def ordenar_cubo():
 blanco_superior = [["W", "W", "W"], ["W", "W", "W"], ["W", "W", "W"]]
 amarillo_inferior = [["Y", "Y", "Y"], ["Y", "Y", "Y"], ["Y", "Y", "Y"]]
 rojo_lateral_derecho = [["R", "R", "R"], ["R", "R", "R"], ["R", "R", "R"]]
-naranja_posterior = [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]]
-azul_lateral_izquierdo = [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]]
+naranja_lateral_izquierdo = [["O", "O", "O"], ["O", "O", "O"], ["O", "O", "O"]]
+azul_posterior = [["B", "B", "B"], ["B", "B", "B"], ["B", "B", "B"]]
 verde_frontal = [["G", "G", "G"], ["G", "G", "G"], ["G", "G", "G"]]
 
 
