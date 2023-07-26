@@ -67,17 +67,16 @@
 <body>
     <div class="container">
         <h1>Registrar</h1>
-        <form id="formulario">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
+        <form id="formulario" method="post" action="app.php">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contasena" name="contrasena" required>
 
             <input type="submit" value="Registrar">
         </form>
     </div>
-    <script src="app.js"></script>
 </body>
 
 </html>

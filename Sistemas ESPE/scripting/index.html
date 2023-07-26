@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora y Comparador</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="font-size: 20px;">Universidad de las Fuerzas Armadas "ESPE" <br> <br>David Reyes</h1>
+        <h1>Calculadora</h1>
+        <label for="num1">Número 1:</label>
+        <input type="number" id="num1">
+        <br>
+        <label for="num2">Número 2:</label>
+        <input type="number" id="num2">
+        <br>
+        <button onclick="sumar()">Sumar</button>
+        <button onclick="restar()">Restar</button>
+        <button onclick="multiplicar()">Multiplicar</button>
+        <button onclick="dividir()">Dividir</button>
+        <br>
+        <button onclick="compararMayor()">Mayor</button>
+        <button onclick="compararMenor()">Menor</button>
+        <button onclick="compararIgual()">Igual</button>
+        <br>
+        <p>Resultado: <span id="resultado">-</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
