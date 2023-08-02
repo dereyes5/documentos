@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Juego de palabras</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Juego de palabras</h1>
+        <div id="game-container">
+            <p>Presiona el botón "Empezar" para jugar:</p>
+            <button id="start-button" onclick="startGame()">Empezar</button>
+            <div id="letter-container">
+                <p>Letra aleatoria: <span id="random-letter"></span></p>
+            </div>
+            <input type="text" id="name" placeholder="Nombre">
+            <input type="text" id="lastName" placeholder="Apellido">
+            <input type="text" id="city" placeholder="Ciudad">
+            <input type="text" id="country" placeholder="País">
+            <input type="text" id="animal" placeholder="Animal">
+            <input type="text" id="fruit" placeholder="Fruta">
+            <button id="submit-button" onclick="submitWords()">Enviar</button>
+            <button id="finish-button" onclick="finishGame()">Finalizar</button>
+            <p id="time-remaining"></p>
+        </div>
+        <div id="score-container">
+            <h2>Puntuación</h2>
+            <p id="score"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
